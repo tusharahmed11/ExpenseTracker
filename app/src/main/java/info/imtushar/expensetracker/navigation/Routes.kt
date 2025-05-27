@@ -23,6 +23,9 @@ object AddRoute
 @Serializable
 object SettingsRoute
 
+@Serializable
+object CategoryRoute
+
 
 sealed class NavDestination(val title: String, val route: Any, val icon: ImageVector) {
     object Expenses : NavDestination(

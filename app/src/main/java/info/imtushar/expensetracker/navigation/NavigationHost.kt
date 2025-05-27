@@ -12,7 +12,8 @@ import androidx.navigation.compose.composable
 import info.imtushar.expensetracker.screens.AddScreen
 import info.imtushar.expensetracker.screens.expenses.ExpensesScreen
 import info.imtushar.expensetracker.screens.ReportsScreen
-import info.imtushar.expensetracker.screens.SettingsScreen
+import info.imtushar.expensetracker.screens.settings.CategoryScreen
+import info.imtushar.expensetracker.screens.settings.SettingsScreen
 
 
 @Composable
@@ -38,8 +39,20 @@ fun NavigationHost(
             AddScreen()
         }
         composable<SettingsRoute>{
-            SettingsScreen()
+            SettingsScreen(
+                onCategoryAction = {
+                    navController.navigate(CategoryRoute)
+                }
+            )
 
+        }
+
+        composable<CategoryRoute>{
+            CategoryScreen(
+                onBackAction = {
+                    navController.navigateUp()
+                }
+            )
         }
 
     }

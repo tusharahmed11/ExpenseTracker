@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -58,6 +60,19 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.dagger.hilt.android)
+    implementation(libs.dagger.hilt.navigation.fragment)
+    implementation(libs.dagger.hilt.navigation.compose)
+    ksp(libs.dagger.hilt.compiler)
+
+    //Room
+    implementation (libs.room.runtime)
+    implementation (libs.room.ktx)
+    ksp (libs.room.compiler)
+
+    implementation(libs.kvColorPicker.android)
+
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.google.fonts)
 
 }

@@ -25,13 +25,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import info.imtushar.expensetracker.R
+import info.imtushar.expensetracker.ui.theme.BackgroundElevated
+import info.imtushar.expensetracker.ui.theme.appbarTitle
 
 @Composable
 fun SimpleToolbar(
     title: String,
     onBackAction: (() -> Unit)? = null
 ) {
-    Column {
+    Column(modifier = Modifier.fillMaxWidth().background(color = BackgroundElevated),) {
+
+        Spacer(modifier = Modifier.size(20.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(vertical = 12.dp, horizontal = 16.dp)
@@ -46,7 +51,7 @@ fun SimpleToolbar(
                     Icon(
                         painter = painterResource(id = R.drawable.ic_arrow_back),
                         contentDescription = "back arrow",
-                        tint = RickTextPrimary,
+                        tint = Color.White,
                         modifier = Modifier
                             .align(Alignment.Center)
                             .padding(4.dp)
@@ -57,19 +62,9 @@ fun SimpleToolbar(
             }
             Text(
                 text = title,
-                fontSize = 30.sp,
-                style = TextStyle(
-                    color = RickTextPrimary,
-                    fontWeight = FontWeight.Bold
-                )
+                style = appbarTitle
             )
         }
-        Box(
-            modifier = Modifier
-                .background(color = RickTextPrimary)
-                .fillMaxWidth()
-                .height(1.dp)
-        )
     }
 }
 

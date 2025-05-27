@@ -19,3 +19,5 @@ val PrimaryVariant = Color(0xFF5E5CE6)
 
 val SystemGray04 = Color(0xFF3A3A3C)
 val LabelSecondary = Color(0x99EBEBF5)
+val BorderColor = Color(0x52787880)
+val IconColor = Color(0x4DEBEBF5)

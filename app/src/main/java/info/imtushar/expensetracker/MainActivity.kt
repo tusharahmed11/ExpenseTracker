@@ -26,11 +26,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import info.imtushar.expensetracker.navigation.NavigationHost
 import info.imtushar.expensetracker.screens.BottomNavigationBar
 import info.imtushar.expensetracker.ui.theme.BackgroundElevated
 import info.imtushar.expensetracker.ui.theme.ExpenseTrackerTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
