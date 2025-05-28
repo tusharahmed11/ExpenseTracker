@@ -16,7 +16,7 @@ import info.imtushar.expensetracker.data.models.Expense
         Expense::class,
         Category::class
     ],
-    version = DatabaseConstants.DATABASE_VERSION,
+    version = DatabaseConstants.DATABASE_VERSION,exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class BaseDatabase : RoomDatabase() {

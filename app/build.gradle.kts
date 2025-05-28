@@ -70,7 +70,7 @@ dependencies {
     implementation (libs.room.ktx)
     ksp (libs.room.compiler)
 
-    implementation(libs.kvColorPicker.android)
+    implementation(libs.custom.colorPicker.android)
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.google.fonts)

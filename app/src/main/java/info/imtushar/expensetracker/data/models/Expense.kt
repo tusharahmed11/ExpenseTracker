@@ -3,6 +3,7 @@ package info.imtushar.expensetracker.data.models
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import info.imtushar.expensetracker.utils.Converters
@@ -17,9 +18,11 @@ import java.util.UUID
             entity = Category::class,
             parentColumns = ["id"],
             childColumns = ["categoryId"],
-            onDelete = ForeignKey.CASCADE // Deletes expenses if category is deleted
+            onDelete = ForeignKey.CASCADE
         )
-    ])
+    ],
+    indices = [Index(value = ["categoryId"])]
+)
 
 @TypeConverters(Converters::class)
 data class Expense(

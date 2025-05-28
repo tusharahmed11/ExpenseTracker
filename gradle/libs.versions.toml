@@ -17,7 +17,7 @@ hiltAndroidCompiler = "2.48"
 hiltCompiler = "2.56.2"
 hiltNavigationFragment = "1.2.0"
 roomRuntime ="2.7.1"
-kvColorPickerAndroid ="2.2.0"
+kvColorPickerAndroid ="2.1.0"
 
 [libraries]
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
@@ -43,7 +43,7 @@ dagger-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compo
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
-kvColorPicker-Android = { module = "com.github.KvColorPalette:KvColorPalette-Android", version.ref = "kvColorPickerAndroid" }
+custom-colorPicker-Android = { module = "com.github.KvColorPalette:KvColorPicker-Android", version.ref = "kvColorPickerAndroid" }
 
 
 [plugins]

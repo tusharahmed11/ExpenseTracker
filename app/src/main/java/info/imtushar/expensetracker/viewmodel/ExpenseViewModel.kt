@@ -1,25 +1,31 @@
 package info.imtushar.expensetracker.viewmodel
 
+
 import androidx.compose.foundation.text.input.TextFieldState
-import androidx.compose.foundation.text.input.delete
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import info.imtushar.expensetracker.data.models.Category
 import info.imtushar.expensetracker.repository.CategoryRepository
+import info.imtushar.expensetracker.repository.ExpenseRepository
+import info.imtushar.expensetracker.utils.Recurrence
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import java.util.UUID
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryViewModel @Inject constructor(private val categoryRepository: CategoryRepository): ViewModel()  {
+class ExpenseViewModel @Inject constructor(private val expenseRepository: ExpenseRepository, private val categoryRepository: CategoryRepository) : ViewModel() {
 
-    val categoryTextFieldState = TextFieldState()
-    val categoryColor = mutableStateOf<String>("#FFFFFF")
+    var amountValue by mutableStateOf("")
+    var noteValue by mutableStateOf("")
+    var selectedRecurrence by mutableStateOf<Recurrence?>(null)
 
     private val _categories = MutableStateFlow<List<Category>>(emptyList())
     val categories: StateFlow<List<Category>> = _categories.asStateFlow()
@@ -35,26 +41,4 @@ class CategoryViewModel @Inject constructor(private val categoryRepository: Cate
             }
         }
     }
-
-    fun addCategory() {
-        if (categoryTextFieldState.text.isNotBlank()) {
-            viewModelScope.launch {
-                val category = Category(
-                    name = categoryTextFieldState.text.toString(),
-                    color = categoryColor.value
-                )
-                categoryRepository.insert(category)
-                categoryTextFieldState.edit { delete(0, length) } // Clear the text field
-                categoryColor.value = "#FFFFFF" // Reset the color
-            }
-        }
-    }
-
-    fun deleteCategory(categoryId: UUID) {
-        viewModelScope.launch {
-            categoryRepository.delete(categoryId)
-        }
-    }
-
-
 }
