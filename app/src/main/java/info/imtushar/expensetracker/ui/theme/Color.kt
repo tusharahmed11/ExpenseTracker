@@ -13,6 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 val Surface = Color.Black
 val TextPrimary = Color.White
 val Destructed = Color(0xFFFF453A)
+val SuccessColor = Color(0x6632D74B)
 val BackgroundElevated = Color(0xFF1C1C1E)
 val Primary = Color(0xFF0A84FF)
 val PrimaryVariant = Color(0xFF5E5CE6)

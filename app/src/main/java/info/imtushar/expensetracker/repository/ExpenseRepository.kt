@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class ExpenseRepository @Inject constructor(private val expenseDao: ExpenseDao)  {
 
-    suspend fun insert(expense: Expense) {
+    suspend fun addExpense(expense: Expense) {
         expenseDao.insert(expense)
     }
 

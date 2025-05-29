@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import info.imtushar.expensetracker.data.models.DatabaseConstants.TBL_EXPENSE
 import info.imtushar.expensetracker.data.models.Expense
-import info.imtushar.expensetracker.utils.BaseDao
+import info.imtushar.expensetracker.data.dao.BaseDao
 import kotlinx.coroutines.flow.Flow
 
 @Dao

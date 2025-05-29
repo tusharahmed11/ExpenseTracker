@@ -6,3 +6,9 @@ enum class Recurrence {
     WEEKLY,
     MONTHLY
 }
+
+enum class FilterType  {
+    THIS_WEEK,
+    THIS_MONTH,
+    THIS_YEAR
+}

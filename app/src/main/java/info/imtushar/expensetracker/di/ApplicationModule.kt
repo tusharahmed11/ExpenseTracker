@@ -8,7 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import info.imtushar.expensetracker.data.dao.CategoryDao
 import info.imtushar.expensetracker.data.dao.ExpenseDao
-import info.imtushar.expensetracker.utils.BaseDatabase
+import info.imtushar.expensetracker.data.database.BaseDatabase
 import javax.inject.Singleton
 
 

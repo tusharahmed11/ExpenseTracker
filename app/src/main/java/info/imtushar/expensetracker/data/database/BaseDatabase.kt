@@ -1,4 +1,4 @@
-package info.imtushar.expensetracker.utils
+package info.imtushar.expensetracker.data.database
 
 import android.content.Context
 import androidx.room.Database
@@ -10,6 +10,7 @@ import info.imtushar.expensetracker.data.dao.ExpenseDao
 import info.imtushar.expensetracker.data.models.Category
 import info.imtushar.expensetracker.data.models.DatabaseConstants
 import info.imtushar.expensetracker.data.models.Expense
+import info.imtushar.expensetracker.utils.Converters
 
 @Database(
     entities = [

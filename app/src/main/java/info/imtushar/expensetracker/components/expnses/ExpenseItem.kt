@@ -33,12 +33,12 @@ fun ExpenseItem(
             Text(
                 text = expense.title,
                 color = Color.White,
-                style = regularHeadline,
+                style = regularHeadline
             )
             Text(
-                text = "$ ${expense.amount}",
+                text = "$ ${String.format("%.2f", expense.amount)}",
                 color = Color.White,
-                style = regularHeadline,
+                style = regularHeadline
             )
         }
 
@@ -54,7 +54,7 @@ fun ExpenseItem(
             }*/
 
             Text(
-                text = "${expense.time.hour} : ${expense.time.minute}",
+                text = "${expense.time.hour}:${expense.time.minute.toString().padStart(2, '0')}",
                 color = LabelSecondary,
                 style = regularHeadline,
             )
